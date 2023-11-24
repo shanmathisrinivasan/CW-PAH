@@ -1,0 +1,28 @@
+// registration-form-react.component.ts
+import { Component, OnInit } from '@angular/core';
+import { render } from 'react-dom';
+import React from 'react';
+
+interface RegistrationFormData {
+  
+}
+
+export const RegistrationFormReactComponent: React.FC = () => {
+  
+  return (
+    <div>
+      <h2>React Registration Form</h2>
+      {/* Your form JSX here */}
+    </div>
+  );
+};
+
+@Component({
+  selector: 'app-registration-form-react',
+  template: '',
+})
+export class RegistrationFormReactWrapperComponent implements OnInit {
+  ngOnInit(): void {
+    render(<RegistrationFormReactComponent />, document.getElementById('react-root'));
+  }
+}
