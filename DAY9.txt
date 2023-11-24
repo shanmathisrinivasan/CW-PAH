@@ -1,0 +1,110 @@
+// NavBar.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const NavBar = () => {
+  return (
+    <nav>
+      <h1>Music World</h1>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/singers">Singers</Link>
+        </li>
+        <li>
+          <Link to="/albums">Albums</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
+export default NavBar;
+// Home.js
+import React from 'react';
+
+const Home = () => {
+  return (
+    <div>
+      <h2>Welcome to Music World!</h2>
+    </div>
+  );
+};
+
+export default Home;
+// Singers.js
+import React from 'react';
+
+const Singers = () => {
+  const singers = [
+    { name: 'Singer 1', year: 2000 },
+    { name: 'Singer 2', year: 1995 },
+   
+  ];
+
+  return (
+    <div>
+      <h2>Singers</h2>
+      <ul>
+        {singers.map((singer, index) => (
+          <li key={index}>
+            {singer.name} - {singer.year}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Singers;
+// Albums.js
+import React from 'react';
+
+const Albums = () => {
+  const albums = [
+    { name: 'Album 1', singer: 'Singer 1' },
+    { name: 'Album 2', singer: 'Singer 2' },
+    
+  ];
+
+  return (
+    <div>
+      <h2>Albums</h2>
+      <ul>
+        {albums.map((album, index) => (
+          <li key={index}>
+            {album.name} - {album.singer}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Albums;
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import NavBar from './NavBar';
+import Home from './Home';
+import Singers from './Singers';
+import Albums from './Albums';
+
+const App = () => {
+  return (
+    <Router>
+      <div>
+        <NavBar />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/singers" component={Singers} />
+          <Route path="/albums" component={Albums} />
+        </Switch>
+      </div>
+    </Router>
+  );
+};
+
+export default App;
