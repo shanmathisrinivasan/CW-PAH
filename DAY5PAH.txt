@@ -1,0 +1,36 @@
+import React, { Component } from 'react';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: 'msg-lamNEO',
+    };
+  }
+
+  componentDidMount() {
+    console.log('Component Did MOUNT');
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('Component Did UPDATE');
+    console.log('Previous State:', prevState);
+    console.log('Current State:', this.state);
+  }
+
+  handleClick = () => {
+    
+    this.setState({ message: 'Welcome to React' });
+  };
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+        <button onClick={this.handleClick}>Click me</button>
+      </div>
+    );
+  }
+}
+
+export default App;

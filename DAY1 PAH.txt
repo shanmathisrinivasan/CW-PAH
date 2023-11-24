@@ -1,0 +1,50 @@
+// JavaScript function
+function demonstratePrimitiveDataTypes() {
+  // Variable declaration and assignment
+  let age = 18; // number primitive data type
+  let name = "kiran"; // string primitive data type
+  let setStatus = false; // boolean primitive data type
+  let userDefault = undefined; // undefined primitive data type
+  let responseValue = null;
+
+  // Display the values using console.log()
+  console.log("Initial Values:");
+  console.log("Age:", age);
+  console.log("Name:", name);
+  console.log("setStatus:", setStatus);
+  console.log("userDefault:", userDefault);
+  console.log("responseValue:", responseValue);
+
+  // Assign new values to two variables
+  let oldAge = age;
+  age = 25;
+
+  let setStatusVar = setStatus;
+  setStatus = true;
+
+  // Print the values after the update
+  console.log("\nUpdated Values:");
+  console.log("Age:", age);
+  console.log("Old Age:", oldAge);
+  console.log("setStatus:", setStatus);
+  console.log("Old setStatus:", setStatusVar);
+
+  // Display an alert message
+  alert("Check the console output!");
+}
+
+// React component
+import React from 'react';
+
+const App = () => {
+  return (
+    <div>
+      <h1>Primitive Data Types</h1>
+      <button onClick={demonstratePrimitiveDataTypes}>
+        Click to demonstrate Primitive Data Types
+      </button>
+    </div>
+  );
+};
+
+export default App;
